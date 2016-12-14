@@ -1,0 +1,14 @@
+General understanding about Bayes's Rule from:
+	https://arbital.com/p/bayes_rule/?l=1zq
+Practical understanding / algorithm from video:
+	https://www.youtube.com/watch?v=EGKeC2S44Rs
+
+* Concatenated the training files together since we are only dealing with
+categories during training, test files should still be sepearate though
+* Spent 2 hours on fixing the encoding of the files
+I think i will just convert all to utf8 then search & replace
+
+Well ı and İ maps to the same character how cool is that
+(enconv and enca was useless, uchardet into iconv kind of saved the day)
+
+managed to end up with 4 files which are 5 categories appended together
