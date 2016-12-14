@@ -11,4 +11,4 @@ I think i will just convert all to utf8 then search & replace
 Well ı and İ maps to the same character how cool is that
 (enconv and enca was useless, uchardet into iconv kind of saved the day)
 
-managed to end up with 4 files which are 5 categories appended together
+managed to end up with 5 files which are 5 categories appended together
