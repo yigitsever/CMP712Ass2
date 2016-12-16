@@ -60,7 +60,8 @@ Ortalamada sağladığı yüzde 17'nin üzerindeki getirisi ile B tipi tahvil bo
 
 Hisse senedi piyasasının olumsuz performans gösterdiği dönemde A tipi fonlar ise ortalamada sağladığı yüzde 2.6'lık getiri ile yatırımcısını üzdü. Düşük oranda hisse senedi taşıyan A tipi karma ve A tipi değişken fonlar getiri performansında diğer A tipi fonların önünde yer aldılar. A tipi karma ve A tipi değişken fonlar  portföylerinde bulunan yüksek oranlı faiz enstrümanlarına dayalı olarak enflasyonun altında ancak pozitif getiri sağladılar. Daha yüksek hisse senedi oranı taşıyan A tipi hisse senedi, A tipi sektör ve A tipi endeks fonlar ise hisse senedi piyasasında yaşanan düşüş trendinden daha fazla etkilendiler. ıMKB'ye ilişkin yüksek getiri potansiyeli önümüzdeki dönemde A tipi yatırım fonlarını ön plana çıkarabilir.
 
-Veriler, Fonmarket işbirliğiyle hazırlanan Kurumsal Yatırımcı Yöneticileri Derneği'nin (KYD) web sitesinden alınmış ve analiz edilmiştir.
+Veriler, Fonmarket işbirliğiyle hazırlanan Kurumsal Yatırımcı Yöneticileri Derneği'nin (KYD) web sitesinden alınmış ve analiz edilmiştir.
+
 
 
 Uluslararası ekonomi gazetesi Financial Times'da yer alan haberde Koç Grubu'nun agresif bir stratejiyle genişleyeceği belirtildi.
@@ -125,15 +126,16 @@ Borsa eninde sonunda çıkışını yapacak. Ancak görüldüğü kadarıyla bu 
 
 Borsa uyurken bir yandan da yasal düzenlemeler hızlanıyor. Sermaye Piyasası Kurulu (SPK) kredili işlemler tebliği taslağını hazırladı. Sektörden görüş alan Kurul, Aracı Kuruluşlar Birliği'nde de toplantı düzenledi. Takasbank nezdinde Ödünç Menkul Kıymetler Piyasası kurulması da tebliğ taslağında yer alıyor. Eğer tebliğ bu haliyle resmi gazetede yayınlanırsa Takasbank'ın organize edeceği Ödünç Menkul Kıymetler Piyasası kurulacak ve açığa satış işlemleri de sorunsuz ve uluslararası uygulamalar paralelinde yapılabilecek.
 
-Haftayı düşüş eğilimiyle geçiren ıMKB 100 Endeksi perşembe günü haftanın en düşük seviyesi olan 10,167'i test etti. Son iki gün tutunma çabalarının etkili olduğu ve 10,200 desteğinin çalıştığı izleniyor.
+Haftayı düşüş eğilimiyle geçiren ıMKB 100 Endeksi perşembe günü haftanın en düşük seviyesi olan 10,167'i NaiveBayesClassifier etti. Son iki gün tutunma çabalarının etkili olduğu ve 10,200 desteğinin çalıştığı izleniyor.
 
 Bu hafta Merkez Bankası döviz alım ihalesiyle doların 1,480'lerde tutunmasını sağladı. Ancak yaz mevsimine girilmesiyle döviz arzının artması bekleniyor. Bu durumda MB'nın döviz alım ihaleri de yeterli olmayabilir. Diğer taraftan mart sonlarından beri düşüş eğiliminde olan faizlerde bu hafta kar realizasyonları etkili oldu. Faizler yüzde 48- 50 bandına dek süren düşüşün ardından bir iki puanlık artış kaydetti.
 
-Piyasalarda MB'dan ikinci bir kotasyon indirimi beklentisi giderek güçleniyor. Bütün olumlu rüzgarlara rağmen hisse senetleri piyasası zayıf işlem hacmiyle desteklerini test ederken, yabancı yatırımcıların satış baskısı hafta boyunca devam etti. Önümüzdeki haftalarda çok beklenmedik bir gelişme olmazsa ıMKB 100 Endeksi'nin yavaş yavaş güçlenmesi beklenebilir. 10,000- 10,500 aralığındaki güçlü desteklerin çalışmasıyla biraz daha güçlü bir piyasa izlenebilir,Ancak yukarıya doğru hareketlerde mutlaka işlem hacminde artış eğilimi gerekiyor. 11,000'lerdeki güçlü dirençlerin kırılabilmesi hacimdeki artışlara bağlı.
+Piyasalarda MB'dan ikinci bir kotasyon indirimi beklentisi giderek güçleniyor. Bütün olumlu rüzgarlara rağmen hisse senetleri piyasası zayıf işlem hacmiyle desteklerini NaiveBayesClassifier ederken, yabancı yatırımcıların satış baskısı hafta boyunca devam etti. Önümüzdeki haftalarda çok beklenmedik bir gelişme olmazsa ıMKB 100 Endeksi'nin yavaş yavaş güçlenmesi beklenebilir. 10,000- 10,500 aralığındaki güçlü desteklerin çalışmasıyla biraz daha güçlü bir piyasa izlenebilir,Ancak yukarıya doğru hareketlerde mutlaka işlem hacminde artış eğilimi gerekiyor. 11,000'lerdeki güçlü dirençlerin kırılabilmesi hacimdeki artışlara bağlı.
 
 ıyi haftalar dileğiyle.
 
-Veriler, Kurumsal Yatırımcı Yöneticiler Derneği'nin (KYD) web sitesinden alınmış ve analiz edilmış tir.
+Veriler, Kurumsal Yatırımcı Yöneticiler Derneği'nin (KYD) web sitesinden alınmış ve analiz edilmış tir.
+
 
 
 Türk - ış'in düzenlediği ışine, ekmeğine, vatanına sahip çık mitinginde 50 bine yakın işçi, TBMM Genel Kurulu'nda bir bölümü kabul edilen yeni ış Yasası nedeniyle hükümeti protesto etti.
@@ -366,7 +368,8 @@ Ortalama yüzde 58'e yakın seviyelerde maliyet oluşturan ve geçen hafta yüzd
 
 Sabah saatlerinde 1 milyon 500 binli seviyelerde bulunan dolar, ihaleye girmek isteyen yerli kurumsal müşterilerin satışıyla 1 milyon 480 bin  seviyesine geriledi. Bu seviyeden sonra, daha önce dolar yükselir beklentisiyle alım yapan bazı yabancı bankaların zararına satış yaptıkları görüldü. Bu satışlarında etkisiyle dolar gün sonunda 1 milyon 455 bin seviyelerine kadar gevşedi. Dolar bir günde 45 bin lira gerilerken piyasada beklenmesine karşın Merkez Bankası müdahale etmedi. Euroda uluslararası piyasalarda yükselmesine karşın içeride 25 bin lira değer kaybetti.
 
-Veriler, Fonmarket işbirliğiyle hazırlanan Kurumsal Yatırımcı Yöneticileri Derneği'nin (KYD) web sitesinden alınmış ve analiz edilmiştir.
+Veriler, Fonmarket işbirliğiyle hazırlanan Kurumsal Yatırımcı Yöneticileri Derneği'nin (KYD) web sitesinden alınmış ve analiz edilmiştir.
+
 
 
 Yargıtay Cumhuriyet Başsavcılığı, ınterbank'ın içini boşalttıkları iddia edilen 37 sanığın beraatiyle sonuçlanan davada, bankanın eski sahibi Cavit Çağlar'ın da aralarında bulunduğu altı sanık hakkındaki kararın bozulmasını istedi.

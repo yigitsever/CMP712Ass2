@@ -19,7 +19,7 @@ import java.util.LinkedList;
 /**
  * Created by yigit on 12/14/16.
  */
-public class test {
+public class NaiveBayesClassifier {
     public static Matrix matrix;
 
     public static void main(String[] args) {
@@ -44,17 +44,12 @@ public class test {
         for (Document ignored : corpus) {
             corpusSize++;
         }
-//        System.out.println("CorpusSize " + corpusSize);
 
         PatriciaTreePerfectHash dictionary = PatriciaTreePerfectHash.buildFromCorpus(corpus, factory, 0);
 
         matrix = DocumentTermMatrixBuilder.createMatrix(dictionary, corpus, factory, corpusSize);
 
         int vocabularySize = dictionary.size(); // Will be used for P(W_k | z) formula
-
-//        System.out.println("RowSize: " + matrix.rowSize());
-//        System.out.println("ColumnSize: " + matrix.columnSize());
-
 
         int docSizes[] = new int[matrix.rowSize()];
         for (int i = 0; i < matrix.rowSize(); i++) {
@@ -112,7 +107,7 @@ public class test {
                         score = score.multiply(tmp);
                     }
                 }
-//                score *= 1 / 5; // Well, redundant
+//                score *= 1 / 5; // Redundant
                 if (score.compareTo(highscore) == 1) {
                     highscore = score;
                     highest = z;
@@ -134,7 +129,8 @@ public class test {
 
         }
         System.out.println("==RESULTS==");
-        System.out.printf("%-6d Matched | Missed %-6d", match, miss);
+        System.out.printf("%-6d Matched | Missed %-6d\n", match, miss);
+        System.out.printf("Precision:%.4f", (double) ((double) match / ((double) miss + match)));
 
 
     }
@@ -145,6 +141,7 @@ public class test {
         formatter.setMinimumFractionDigits(scale);
         return formatter.format(x);
     }
+    // Taken from http://stackoverflow.com/questions/18027047/forcing-bigdecimals-to-use-scientific-notation
 
 
 }
