@@ -58,9 +58,11 @@ public class test {
 
         for (int z = 0; z < corpusSize; z++) {
             for (int w = 0; w < vocabularySize; w++) {
-                p_z_w[z][w] = (matrix.get(z,w) + 1) / (docSizes[z] + vocabularySize);
+                p_z_w[z][w] = (matrix.get(z, w) + 1) / (docSizes[z] + vocabularySize);
             }
         }
+
+
 
     }
 
