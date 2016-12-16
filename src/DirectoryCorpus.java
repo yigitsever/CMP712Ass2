@@ -34,7 +34,6 @@ public class DirectoryCorpus implements Corpus {
 
     private class DocIterator implements Iterator<Document> {
         private File[] directory;
-
         private int index;
         private Document document;
 

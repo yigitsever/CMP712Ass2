@@ -1,4 +1,7 @@
+import org.apache.mahout.math.Matrix;
+import tr.edu.hacettepe.document.Document;
 import tr.edu.hacettepe.tokenize.TokenizerFactory;
+import tr.edu.hacettepe.tools.DocumentTermMatrixBuilder;
 import tr.edu.hacettepe.vocab.PatriciaTreePerfectHash;
 
 /**
@@ -11,12 +14,15 @@ public class test {
 
         DirectoryCorpus corpus = new DirectoryCorpus("Training");
 
+        int corpusSize = 0;
+        for (Document document : corpus) {
+            corpusSize++;
+        }
+
 
         PatriciaTreePerfectHash dictionary = PatriciaTreePerfectHash.buildFromCorpus(corpus, factory, 0);
 
-        for (int i = 0; i < dictionary.size(); i++) {
-            System.out.println(dictionary.findWord(i));
-        }
+        Matrix matrix = DocumentTermMatrixBuilder.createMatrix(dictionary, corpus, factory, corpusSize);
 
 
     }
