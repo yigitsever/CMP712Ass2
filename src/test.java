@@ -9,6 +9,8 @@ import tr.edu.hacettepe.vocab.PatriciaTreePerfectHash;
  * Created by yigit on 12/14/16.
  */
 public class test {
+    public static Matrix matrix;
+
     public static void main(String[] args) {
 
         /*
@@ -27,16 +29,16 @@ public class test {
         for (Document document : corpus) {
             corpusSize++;
         }
-        System.out.println("CorpusSize " + corpusSize);
+//        System.out.println("CorpusSize " + corpusSize);
 
         PatriciaTreePerfectHash dictionary = PatriciaTreePerfectHash.buildFromCorpus(corpus, factory, 0);
 
-        Matrix matrix = DocumentTermMatrixBuilder.createMatrix(dictionary, corpus, factory, corpusSize);
+        matrix = DocumentTermMatrixBuilder.createMatrix(dictionary, corpus, factory, corpusSize);
 
         int vocabularySize = dictionary.size(); // Will be used for P(W_k | z) formula
 
-        System.out.println("RowSize: " + matrix.rowSize());
-        System.out.println("ColumnSize: " + matrix.columnSize());
+//        System.out.println("RowSize: " + matrix.rowSize());
+//        System.out.println("ColumnSize: " + matrix.columnSize());
 
 
         int docSizes[] = new int[matrix.rowSize()];
@@ -50,8 +52,14 @@ public class test {
             }
         }
 
-        for (int i = 0; i < docSizes.length; i++) {
-            System.out.println(docSizes[i]);
+
+        double p_z_w[][] = new double[corpusSize][vocabularySize];
+
+
+        for (int z = 0; z < corpusSize; z++) {
+            for (int w = 0; w < vocabularySize; w++) {
+                p_z_w[z][w] = (matrix.get(z,w) + 1) / (docSizes[z] + vocabularySize);
+            }
         }
 
     }
