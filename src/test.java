@@ -6,7 +6,14 @@ import tr.edu.hacettepe.tokenize.WordTokenizer;
 import tr.edu.hacettepe.tools.DocumentTermMatrixBuilder;
 import tr.edu.hacettepe.vocab.PatriciaTreePerfectHash;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.LinkedList;
 
 /**
@@ -34,7 +41,7 @@ public class test {
         DirectoryCorpus corpus = new DirectoryCorpus(trainingDirectory);
 
         int corpusSize = 0;
-        for (Document document : corpus) {
+        for (Document ignored : corpus) {
             corpusSize++;
         }
 //        System.out.println("CorpusSize " + corpusSize);
@@ -55,7 +62,7 @@ public class test {
 
             Iterable<Vector.Element> elements = v.nonZeroes();
 
-            for (Vector.Element element : elements) {
+            for (Vector.Element ignored : elements) {
                 docSizes[i]++;
             }
         }
@@ -72,17 +79,18 @@ public class test {
 
         File testFolder = new File(testDirectory);
         File[] testFiles = testFolder.listFiles();
+        int match = 0, miss = 0;
 
 
         for (File testFile : testFiles) {
-            double highscore = -1;
+            BigDecimal highscore = new BigDecimal(-1);
             int highest = -1;
             LinkedList<String> fileContent = new LinkedList<>();
             try {
                 Reader testFileReader = new FileReader(testFile);
                 WordTokenizer wordTokenizer = new WordTokenizer(testFileReader);
 
-                String token = "";
+                String token;
 
                 while ((token = wordTokenizer.nextToken()) != null) {
                     fileContent.add(token);
@@ -93,30 +101,49 @@ public class test {
             }   //End of populating fileContent
 
             for (int z = 0; z < corpusSize; z++) {
-                double score = 1;
+                BigDecimal score = new BigDecimal(1);
+                BigDecimal kotarici = new BigDecimal(0.0000001);
                 for (int w = 0; w < fileContent.size(); w++) {
                     int index = dictionary.findIndex(fileContent.get(w));
                     if (index == -1) {
-                        score *= 0.0000001;
+                        score = score.multiply(kotarici);
                     } else {
-                        score *= p_z_w[z][index];
+                        BigDecimal tmp = new BigDecimal(p_z_w[z][index]);
+                        score = score.multiply(tmp);
                     }
                 }
 //                score *= 1 / 5; // Well, redundant
-                if (score > highscore) {
+                if (score.compareTo(highscore) == 1) {
                     highscore = score;
                     highest = z;
                 }
             }
-
             try {
-                System.out.println("For file " + testFile.getCanonicalPath() + " " + categories[highest] + " with " + highscore);
-            } catch (IOException e) {
+//                System.out.println("For file " + testFile.getName() + " classified as " + categories[highest] + " with " + format(highscore, 4));
+//                System.out.println("=>" + testFile.getName() + "\t\t|\t" + categories[highest]);
+                if (testFile.getName().contains(categories[highest])) {
+                    System.out.printf("%-15s| %-15s| MATCH\n", testFile.getName(), categories[highest]);
+                    match++;
+                } else {
+                    System.out.printf("%-15s| %-15s| MISS\n", testFile.getName(), categories[highest]);
+                    miss++;
+                }
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }
+        System.out.println("==RESULTS==");
+        System.out.printf("%-6d Matched | Missed %-6d", match, miss);
 
+
+    }
+
+    private static String format(BigDecimal x, int scale) {
+        NumberFormat formatter = new DecimalFormat("0.0E0");
+        formatter.setRoundingMode(RoundingMode.HALF_UP);
+        formatter.setMinimumFractionDigits(scale);
+        return formatter.format(x);
     }
 
 
