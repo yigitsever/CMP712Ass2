@@ -41,17 +41,18 @@ public class DirectoryCorpus implements Corpus {
             File folder = new File(corpusPath);
             directory = folder.listFiles();
             index = 0;
-            document = nextDoc();
+//            document = nextDoc();
 
         }
 
         @Override
         public boolean hasNext() {
+
             return this.directory.length > index;
         }
 
         private Document nextDoc() {
-            File tmp = this.directory[index];
+            File tmp = this.directory[index++];
 
             StringBuilder fileContent = new StringBuilder();
             String lineSeperator = System.getProperty("line.separator");
@@ -72,9 +73,9 @@ public class DirectoryCorpus implements Corpus {
 
         @Override
         public Document next() {
-            Document tmp = document;
             document = nextDoc();
-            index++;
+
+            Document tmp = document;
             return tmp;
         }
     }
